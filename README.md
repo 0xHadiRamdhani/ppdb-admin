@@ -13,41 +13,41 @@
   <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter" />
   <img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart" />
   <img src="https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore-FFCA28?logo=firebase&logoColor=black" alt="Firebase" />
-  <img src="https://img.shields.io/badge/iOS-Swift%20PM-F05138?logo=swift&logoColor=white" alt="Swift PM" />
+  <img src="https://img.shields.io/badge/iOS-Swift_Package_Manager-F05138?logo=swift&logoColor=white" alt="Swift Package Manager" />
   <img src="https://img.shields.io/badge/Android-API%2021%2B-3DDC84?logo=android&logoColor=white" alt="Android" />
   <img src="https://img.shields.io/badge/Status-Production%20Ready-15803D" alt="Production Ready" />
 </p>
 
 ---
 
-## 📑 Daftar Isi
-- [Ikhtisar Sistem](#-ikhtisar-sistem)
-- [Arsitektur & Diagram Alur](#-arsitektur--diagram-alur)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi & Dependensi](#-teknologi--dependensi)
-- [Struktur Direktori Proyek](#-struktur-direktori-proyek)
-- [Panduan Instalasi & Menjalankan](#-panduan-instalasi--menjalankan)
-- [Konfigurasi Firebase & Keamanan](#-konfigurasi-firebase--keamanan)
-- [Spesifikasi Build Platform](#-spesifikasi-build-platform)
-  - [iOS (Swift Package Manager)](#ios-swift-package-manager-migrated)
+## Daftar Isi
+- [Ikhtisar Sistem](#ikhtisar-sistem)
+- [Arsitektur dan Diagram Alur](#arsitektur-dan-diagram-alur)
+- [Fitur Utama](#fitur-utama)
+- [Teknologi dan Dependensi](#teknologi-dan-dependensi)
+- [Struktur Direktori Proyek](#struktur-direktori-proyek)
+- [Panduan Instalasi dan Menjalankan](#panduan-instalasi-dan-menjalankan)
+- [Konfigurasi Firebase dan Keamanan](#konfigurasi-firebase-dan-keamanan)
+- [Spesifikasi Build Platform](#spesifikasi-build-platform)
+  - [iOS (Swift Package Manager)](#ios-swift-package-manager)
   - [Android](#android)
-- [Desain Sistem & UI/UX](#-desain-sistem--uiux)
-- [Profil Pengembang](#-profil-pengembang)
+- [Desain Sistem dan Antarmuka Pengguna](#desain-sistem-dan-antarmuka-pengguna)
+- [Profil Pengembang](#profil-pengembang)
 
 ---
 
-## 🔭 Ikhtisar Sistem
+## Ikhtisar Sistem
 
 **PPDB Admin Mobile** adalah aplikasi administratif mobile yang bekerja berdampingan dengan portal pendaftaran publik berbasis **Next.js 16**. Aplikasi ini memungkinkan panitia PPDB:
 - Memantau arus pendaftaran secara real-time langsung dari perangkat Android atau iOS.
 - Memverifikasi kelengkapan berkas identitas, rapor, dan ijazah calon siswa.
 - Mengubah status verifikasi secara instan dengan sinkronisasi atomik ke Cloud Firestore.
-- Menghubungi calon siswa atau orang tua/wali melalui integrasi WhatsApp & telepon langsung.
+- Menghubungi calon siswa atau orang tua/wali melalui integrasi WhatsApp dan telepon langsung.
 - Mengelola akun panitia/admin dengan kontrol hak akses berbasis peran (*Role-Based Access Control*).
 
 ---
 
-## 🏗 Arsitektur & Diagram Alur
+## Arsitektur dan Diagram Alur
 
 Sistem dibangun di atas arsitektur *event-driven* yang tersinkronisasi langsung melalui Firebase Cloud Firestore.
 
@@ -79,9 +79,9 @@ flowchart TD
     AdminManage -->|CRUD Akun Panitia| Firestore & Auth
 ```
 
-### Alur Navigasi & Transisi Aplikasi
+### Alur Navigasi dan Transisi Aplikasi
 
-Aplikasi mengimplementasikan sistem transisi berbasis `PageRouteBuilder` dengan kurva opasitas `FadeTransition` pada seluruh rute navigasi untuk pengalaman pengguna yang halus dan konsisten:
+Aplikasi mengimplementasikan sistem transisi berbasis `PageRouteBuilder` dengan kurva opasitas `FadeTransition` pada seluruh rute navigasi untuk pengalaman pengguna yang konsisten:
 
 ```mermaid
 stateDiagram-v2
@@ -106,40 +106,40 @@ stateDiagram-v2
 
 ---
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
-### 1. Autentikasi & Validasi Sesi
+### 1. Autentikasi dan Validasi Sesi
 - **Multi-Role Authentication**: Mendukung peran Super Admin dan Panitia Verifikator.
 - **Auto Session Rehydration**: Sesi tersimpan aman, mencegah *unauthorized access* dengan *listener* status auth reaktif via Provider.
 
 ### 2. Dashboard Pendaftaran Real-Time
-- **Live Firestore Streaming**: Data statistik langsung terupdate tanpa perlu *refresh* manual.
+- **Live Firestore Streaming**: Data statistik langsung terupdate tanpa perlu refresh manual.
 - **Widget Metrik Cepat**: Total pendaftar, jumlah yang lulus verifikasi, menunggu antrean, berkas perlu perbaikan, dan ditolak.
 - **Pencarian Cepat Multi-Kriteria**: Cari berdasarkan Nama, Nomor Registrasi, NISN, atau Asal Sekolah.
 - **Filter Fleksibel**: Filter berdasarkan Status Seleksi dan Pilihan Program Keahlian (TKJ, TBSM, dll.).
 
-### 3. Verifikasi & Manajemen Dokumen
+### 3. Verifikasi dan Manajemen Dokumen
 - Tinjau biodata lengkap calon siswa dan data orang tua/wali.
-- Periksa kelengkapan berkas fisik & digital yang diunggah.
+- Periksa kelengkapan berkas fisik dan digital yang diunggah.
 - Ubah status seleksi dengan 1-tap:
   - `Menunggu verifikasi`
   - `Lulus verifikasi`
   - `Berkas tidak lengkap / dikembalikan`
   - `Tidak lulus verifikasi`
-- Tombol kontak instan ke WhatsApp & Telepon calon peserta didik.
+- Tombol kontak instan ke WhatsApp dan telepon calon peserta didik.
 
 ### 4. Manajemen Akun Panitia
 - Daftar panitia yang memiliki hak akses sistem.
 - Pembuatan akun panitia baru langsung dari aplikasi dengan hashing kredensial aman di Firebase Auth.
 
-### 5. Diagnostik & Pengaturan
+### 5. Diagnostik dan Pengaturan
 - Pantau latensi koneksi ke server database Firebase.
 - Pengaturan notifikasi internal dan preferensi audit log.
 - Dokumentasi profil sekolah dan arsitektur pengembang terintegrasi.
 
 ---
 
-## 🛠 Teknologi & Dependensi
+## Teknologi dan Dependensi
 
 | Kategori | Teknologi | Deskripsi / Penggunaan |
 | :--- | :--- | :--- |
@@ -153,7 +153,7 @@ stateDiagram-v2
 
 ---
 
-## 📁 Struktur Direktori Proyek
+## Struktur Direktori Proyek
 
 ```text
 ppdb-admin/
@@ -192,7 +192,7 @@ ppdb-admin/
 
 ---
 
-## 💻 Panduan Instalasi & Menjalankan
+## Panduan Instalasi dan Menjalankan
 
 ### Prasyarat
 - **Flutter SDK**: Versi `^3.13.4` atau yang lebih baru.
@@ -201,7 +201,7 @@ ppdb-admin/
 - **Android Studio / Command Line Tools**: Versi terbaru dengan SDK Build Tools.
 - Akun Firebase dengan proyek Firestore dan Firebase Auth aktif.
 
-### Langkah-Langkah
+### Langkah Instalasi
 
 1. **Clone Repositori**:
    ```bash
@@ -218,7 +218,7 @@ ppdb-admin/
    Pastikan berkas konfigurasi berikut berada di tempatnya:
    - Android: `android/app/google-services.json`
    - iOS: `ios/Runner/GoogleService-Info.plist`
-   - Dart Options: [**`lib/firebase_options.dart`**](file:///Users/hadiramdhani/mobile_project/ppdb-admin/lib/firebase_options.dart) (dapat digenerate ulang via `flutterfire configure`).
+   - Dart Options: `lib/firebase_options.dart` (dapat digenerate ulang via `flutterfire configure`).
 
 4. **Jalankan Aplikasi pada Perangkat / Simulator**:
    ```bash
@@ -231,7 +231,7 @@ ppdb-admin/
 
 ---
 
-## 🔒 Konfigurasi Firebase & Keamanan
+## Konfigurasi Firebase dan Keamanan
 
 ### Skema Firestore:
 
@@ -242,7 +242,7 @@ ppdb-admin/
   "fullName": "Muhammad Rizky",
   "nisn": "0081234567",
   "chosenMajor": "Teknik Komputer dan Jaringan",
-  "status": "Menunggu verifikasi", // Lulus verifikasi | Berkas tidak lengkap | Tidak lulus verifikasi
+  "status": "Menunggu verifikasi",
   "studentPhone": "081234567890",
   "parentPhone": "081987654321",
   "schoolOrigin": "SMP Negeri 1 Cisaga",
@@ -251,7 +251,7 @@ ppdb-admin/
 }
 ```
 
-#### Aturan Keamanan (*Firestore Security Rules*):
+#### Aturan Keamanan (Firestore Security Rules):
 Hanya pengguna yang telah terotentikasi sebagai admin pada koleksi `users` yang dapat membaca dan memperbarui status pendaftar:
 
 ```javascript
@@ -271,9 +271,9 @@ service cloud.firestore {
 
 ---
 
-## 📱 Spesifikasi Build Platform
+## Spesifikasi Build Platform
 
-### iOS (Swift Package Manager Migrated)
+### iOS (Swift Package Manager)
 Proyek ini telah dimigrasikan dari CocoaPods ke **Swift Package Manager (SPM)** secara penuh untuk manajemen dependensi iOS:
 - Tidak lagi membutuhkan `Podfile` atau perintah `pod install`.
 - Resolusi dependensi ditangani secara native melalui `Runner.xcworkspace/xcshareddata/swiftpm/Package.resolved`.
@@ -298,7 +298,7 @@ flutter build appbundle --release
 
 ---
 
-## 🎨 Desain Sistem & UI/UX
+## Desain Sistem dan Antarmuka Pengguna
 
 Aplikasi ini menggunakan tema visual **EdTech Professional** dengan perpaduan warna resmi:
 
@@ -311,11 +311,11 @@ Aplikasi ini menggunakan tema visual **EdTech Professional** dengan perpaduan wa
 | **Canvas White** | `#F8FAFC` (Slate 50) | Latar Belakang Layar (*Scaffold*) |
 | **Surface White**| `#FFFFFF` | Permukaan Kartu dan Lembar Dialog |
 
-Seluruh perpindahan antar-halaman menggunakan **`PageRouteBuilder`** dengan animasi **`FadeTransition`** untuk transisi layar yang lembut, profesional, dan bebas jeda.
+Seluruh perpindahan antar-halaman menggunakan **`PageRouteBuilder`** dengan animasi **`FadeTransition`** untuk transisi layar yang konsisten dan bebas jeda.
 
 ---
 
-## 👨‍💻 Profil Pengembang
+## Profil Pengembang
 
 Aplikasi ini dikembangkan dan dirawat oleh:
 
@@ -329,5 +329,5 @@ Aplikasi ini dikembangkan dan dirawat oleh:
 ---
 
 <p align="center">
-  <sub>© 2026 PPDB SMK Bani Masum. Seluruh hak cipta dilindungi undang-undang. Dikembangkan dengan dedikasi untuk kemajuan teknologi pendidikan.</sub>
+  <sub>2026 PPDB SMK Bani Masum. Seluruh hak cipta dilindungi undang-undang. Dikembangkan untuk kemajuan teknologi pendidikan.</sub>
 </p>
