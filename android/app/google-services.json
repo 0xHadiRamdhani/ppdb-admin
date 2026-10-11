@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "465093563598",
+    "project_id": "ppdb-smk-bm",
+    "storage_bucket": "ppdb-smk-bm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465093563598:android:09f5b9cd39852e89216c9f",
+        "android_client_info": {
+          "package_name": "com.banimasum.ppdb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo33RVHLeQeUfhA4gr3u1kj384HzFio38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465093563598:android:09f5b9cd39852e89216c9f",
+        "android_client_info": {
+          "package_name": "com.example.ppdb_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo33RVHLeQeUfhA4gr3u1kj384HzFio38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
