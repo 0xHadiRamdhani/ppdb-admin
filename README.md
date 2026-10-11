@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter" />
   <img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart" />
   <img src="https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore-FFCA28?logo=firebase&logoColor=black" alt="Firebase" />
-  <img src="https://img.shields.io/badge/iOS-Swift_Package_Manager-F05138?logo=swift&logoColor=white" alt="Swift Package Manager" />
+  <img src="https://img.shields.io/badge/iOS-SPM-F05138" alt="iOS SPM" />
   <img src="https://img.shields.io/badge/Android-API%2021%2B-3DDC84?logo=android&logoColor=white" alt="Android" />
   <img src="https://img.shields.io/badge/Status-Production%20Ready-15803D" alt="Production Ready" />
 </p>
