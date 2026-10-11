@@ -1690,8 +1690,16 @@ Package: com.banimasum.ppdbsmk
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => const AdminManagementScreen(),
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) =>
+                                    const AdminManagementScreen(),
+                                transitionsBuilder:
+                                    (context, animation, secondaryAnimation, child) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
                               ),
                             );
                           },
@@ -1811,8 +1819,16 @@ Package: com.banimasum.ppdbsmk
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => const SchoolProfileScreen(),
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) =>
+                                    const SchoolProfileScreen(),
+                                transitionsBuilder:
+                                    (context, animation, secondaryAnimation, child) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
                               ),
                             );
                           },
@@ -1830,8 +1846,16 @@ Package: com.banimasum.ppdbsmk
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => const DeveloperScreen(),
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) =>
+                                    const DeveloperScreen(),
+                                transitionsBuilder:
+                                    (context, animation, secondaryAnimation, child) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
                               ),
                             );
                           },

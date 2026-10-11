@@ -2178,7 +2178,17 @@ Hotline: 0812-3456-7890
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const SettingsScreen(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                ),
               );
             },
           ),
@@ -3129,11 +3139,19 @@ Hotline: 0812-3456-7890
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (_) => DetailScreen(
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    DetailScreen(
                   registrationId: docId,
                   data: data,
                 ),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
               ),
             );
           },
@@ -3253,11 +3271,19 @@ Hotline: 0812-3456-7890
                         if (val == 'detail') {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) => DetailScreen(
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation, secondaryAnimation) =>
+                                  DetailScreen(
                                 registrationId: docId,
                                 data: data,
                               ),
+                              transitionsBuilder:
+                                  (context, animation, secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
                             ),
                           );
                         } else if (val == 'status') {
