@@ -1,12 +1,12 @@
-# PPDB Admin Mobile — SMK Bani Masum
+# PPDB Admin Mobile — SMK Bani Ma'sum Subang
 
 <p align="center">
-  <img src="assets/images/smk.png" alt="Logo SMK Bani Masum" width="120" />
+  <img src="assets/images/smk.png" alt="Logo SMK Bani Ma'sum Subang" width="120" />
 </p>
 
 <p align="center">
   <strong>Aplikasi Manajemen Penerimaan Peserta Didik Baru (PPDB) Terintegrasi Real-Time</strong><br>
-  Dirancang khusus untuk Panitia PPDB SMK Bani Masum guna verifikasi data, monitoring statistik pendaftar, dan manajemen status seleksi secara mobile.
+  Dirancang khusus untuk Panitia PPDB SMK Bani Ma'sum Subang guna verifikasi data, monitoring statistik pendaftar, dan manajemen status seleksi secara mobile.
 </p>
 
 <p align="center">
@@ -116,7 +116,7 @@ stateDiagram-v2
 - **Live Firestore Streaming**: Data statistik langsung terupdate tanpa perlu refresh manual.
 - **Widget Metrik Cepat**: Total pendaftar, jumlah yang lulus verifikasi, menunggu antrean, berkas perlu perbaikan, dan ditolak.
 - **Pencarian Cepat Multi-Kriteria**: Cari berdasarkan Nama, Nomor Registrasi, NISN, atau Asal Sekolah.
-- **Filter Fleksibel**: Filter berdasarkan Status Seleksi dan Pilihan Program Keahlian (TKJ, TBSM, dll.).
+- **Filter Fleksibel**: Filter berdasarkan Status Seleksi dan Pilihan Program Keahlian (RPL, TBSM).
 
 ### 3. Verifikasi dan Manajemen Dokumen
 - Tinjau biodata lengkap calon siswa dan data orang tua/wali.
@@ -179,7 +179,7 @@ ppdb-admin/
 │   │   ├── detail_screen.dart       # Verifikasi berkas & profil siswa terperinci
 │   │   ├── developer_screen.dart    # Informasi arsitektur & portofolio developer
 │   │   ├── login_screen.dart        # Gerbang login otentikasi panitia
-│   │   ├── school_profile_screen.dart # Identitas & profil SMK Bani Masum
+│   │   ├── school_profile_screen.dart # Identitas & profil SMK Bani Ma'sum Subang
 │   │   └── settings_screen.dart     # Pengaturan sistem & diagnostik latensi
 │   ├── services/
 │   │   └── in_app_notification_service.dart # Notifikasi banner/snackbar kontekstual
@@ -241,11 +241,11 @@ ppdb-admin/
   "registrationNo": "PPDB-2026-0012",
   "fullName": "Muhammad Rizky",
   "nisn": "0081234567",
-  "chosenMajor": "Teknik Komputer dan Jaringan",
+  "chosenMajor": "Rekayasa Perangkat Lunak",
   "status": "Menunggu verifikasi",
   "studentPhone": "081234567890",
   "parentPhone": "081987654321",
-  "schoolOrigin": "SMP Negeri 1 Cisaga",
+  "schoolOrigin": "SMP Negeri 1 Cisalak, Subang",
   "createdAt": "Timestamp",
   "updatedAt": "Timestamp"
 }
@@ -324,10 +324,10 @@ Aplikasi ini dikembangkan dan dirawat oleh:
 - **Studio**: NexoraLabStudio
 - **Website**: [hadiramdhani.site](https://hadiramdhani.site)
 - **GitHub**: [@0xHadiRamdhani](https://github.com/0xHadiRamdhani)
-- **Institusi**: SMK Bani Masum (Kabupaten Ciamis, Jawa Barat)
+- **Institusi**: SMK Bani Ma'sum Subang (Kecamatan Cisalak, Kabupaten Subang, Jawa Barat)
 
 ---
 
 <p align="center">
-  <sub>2026 PPDB SMK Bani Masum. Seluruh hak cipta dilindungi undang-undang. Dikembangkan untuk kemajuan teknologi pendidikan.</sub>
+  <sub>2026 PPDB SMK Bani Ma'sum Subang. Seluruh hak cipta dilindungi undang-undang. Dikembangkan untuk kemajuan teknologi pendidikan.</sub>
 </p>
